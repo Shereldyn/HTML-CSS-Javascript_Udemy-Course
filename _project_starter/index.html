@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,226 @@
     <link rel="stylesheet" href="style.css">
     <title>My Project</title>
 </head>
+
 <body>
-    <h1>Project Starter</h1><!--sort out extenstion for codde colour-->
-    
+    <h1>Project Starter</h1>
+
     <script src="script.js"></script>
 </body>
+
 </html>
+
+<!--
+*Transcript
+*Section1: Introduction
+
+Okay.
+
+So I just want to create a project starter, basically a boilerplate that we can use in all the following projects so we don't have to keep recreating files and so on.
+
+You can just duplicate this folder and rename it.
+
+So I called it Underscore Project, Underscore, Starter Underscore, and the reason for the underscore is just because it's not an actual project, it's just the boilerplate.
+
+So this is completely empty, there's nothing in it.
+
+And I'm going to open this with V's code.
+
+If you're on Windows, you can right click and say Open with code.
+
+If you're on a mac, you can drag it down to your vs code icon and it should open and you can see it's completely empty.
+
+So I'm going to create three files index HTML is the first one.
+
+Then we want our style sheet, which I'm going to call style CSS and then we want our JavaScript file, which I'm going to call script.JS.
+
+So these are the three main files that we're going to use in all of these projects.
+
+Now in the HTML, I'm going to go ahead and use emit and do exclamation enter, and that's going to give me just a boilerplate of an HTML page with the HTML five dot type head, body tags and so on.
+
+And I'm just going to go ahead and tab down to the title here and say my project and we can change this for every project.
+
+And then in the body we'll just have an H one and we'll say project starter.
+
+Now to open this, I'm going to save this.
+
+Now to open it, you could go to your the actual file like go here and open index HTML, but we're going to be using live server.
+
+So what we want to do is just right click and say open with live server.
+
+And you can see that it's open on my local host or my loopback address, which is 127001 in port 5500.
+
+So I'm just going to make this smaller and we want to make sure that we include our stylesheet here in our JavaScript.
+
+So I'm just going to close the sidebar up and let's add here, we'll say link enter.
+
+And for the ref we want to link to our stylesheet and we want to link to the JavaScript down here right above the ending body tag.
+
+We'll say script, colon CRC and the source for this JavaScript is going to be script JS.
+
+So now both of those should be included and that's pretty much all I want to have for the starting HTML.
+
+Now one thing I want to mention is in some projects we'll be using font.
+
+Awesome.
+
+So you have to include the font awesome stylesheet.
+
+And there's a couple of ways to do that.
+
+So the first is to actually go to Font.
+
+Awesome.
+
+And you can put your email address in here and say send kit code and it'll give you a link to the font.
+
+Awesome CSS.
+
+Now we're not going to do that.
+
+What I usually do is go to cn cn dj's dot com and just search for font.
+
+Awesome.
+
+And you can just simply grab the link right here.
+
+So this is the CSS that you need.
+
+You can copy the link tag and you can put that right above your link to your stylesheet and then we can use font.
+
+Awesome.
+
+So some projects, I might start off with this link already here.
+
+If you want you can keep it here, just comment it out.
+
+And then on projects where we use it, you can uncomment it whatever you want, but I'm just going to go ahead and leave it out.
+
+I just wanted to mention that now for our stylesheet, I do want to start with a default font.
+
+I want to start with the Roboto font.
+
+So I'm going to go ahead and just go to Google Fonts real quick and I have it up here and a shortcut and Roboto is right here.
+
+If you don't see it, you can search for it and you can use a different font if you'd like.
+
+But I'm going to use Roboto regular 400, so I'll say select the style and then Bold 700, select the style.
+
+And over here you can either use a link in your HTML or an import in your CSS.
+
+So I'm going to use the import.
+
+I'm going to copy this.
+
+I don't need the style tags, just the import.
+
+And then we'll go back into our stylesheet and just paste that in there.
+
+That way we can use that font.
+
+All right.
+
+So we can close this up and let's apply that to the body.
+
+So we'll say font family and set that to Roboto sans serif.
+
+So if I save that, notice that it auto reloads, it's because we're using live server.
+
+And I know a lot of you guys probably already know all of this stuff, but I want to make sure that
+
+I'm clear because I know that there are beginners taking this course.
+
+All right.
+
+Now, I also want to set on the universal selector.
+
+So an asterisk here.
+
+This just means we want to apply this to everything.
+
+I want to apply a box sizing property.
+
+This is something I do in just about every project where you see this.
+
+We want to set it to border box so that if we add any padding or any border onto an element, it doesn't actually affect the width of it.
+
+So I add this on just about everything I do, and then in the body here, I'm actually going to get rid of the margin.
+
+So let's say margin zero.
+
+The space you see here is from the the actual H one.
+
+And I'm also going to display flex.
+
+And the reason for this is because I want to center everything because a lot of the most of the projects are going to be something that's right in the middle of the viewport.
+
+So I'm going to display Flex.
+
+And just to talk a little bit about Flexbox, for those of you that haven't used it, I'm going to put two more elements in here.
+
+It could be anything, but I'm just going to put some h twos and just setting it to display flex.
+
+It's going to put it in a row.
+
+You can see how everything I put in the body now goes this way.
+
+It goes horizontal.
+
+I don't actually want that.
+
+I want it to go back vertical but still be a flexbox so we can set the flex direction to column.
+
+If I save that now you can see it goes back vertical.
+
+Now since it's a flex box, I can go ahead and use a line items and I want to align item center.
+
+Now if your Flexbox is a column like this is then align items is going to pertain to aligning it horizontally.
+
+If it's a row, it would pertain to vertical.
+
+All right.
+
+So we we, we centered it horizontally.
+
+I also want to center it vertical.
+
+I want it to be right in the middle.
+
+So for that we can add justify content and set it to center.
+
+Now notice how it didn't move to the center here vertically, and that's because the body doesn't have a height on it.
+
+We need our Flexbox to have a height.
+
+So let's set a min.
+
+We'll just set height to 100 v h, which is a viewport height.
+
+And that means take up the entire height of the browser, the viewport.
+
+So I'm going to save.
+
+And now you can see it's centered both ways.
+
+And then the last thing I want to add here is just an.
+
+Overflow and I'm going to set it to Hidden because I don't want scroll bars to be shown by default and that's it.
+
+So I'll just get rid of these two H twos and just keep the H one there.
+
+So that's pretty much it.
+
+No JavaScript because that's very varies very differently per project.
+
+I just wanted to add some basic styling to kind of move everything to the middle out of font.
+
+Also link in our stylesheet and JavaScript because we don't want to do that in every single project.
+
+So from now on you can just simply copy or duplicate this folder and we can go ahead and get right into the project.
+
+Now if you want to stop live server, you see this little port, 5500, you can click that or you can right click and you can say Stop Live Server and now it's going to stop serving on that on local host 5500.
+
+So that's going to be pretty much the workflow.
+
+We'll go ahead and use this boilerplate here, the project starter and we'll use live server to run it and then we'll go ahead and create our projects.
+-->

@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+/*  font was adjusted to the Muli font  */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    /*  
+    'flex-direction: column;' was removed as the panels were decided to remain in the original row format   
+    */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    /*   container is wrapped around all the panels  */
+    display: flex;
+    /* 
+    'display: flex;' immediately turns it into a flex row therefore all the children of the container will be put into a flex row where they are displayed side by side
+
+    However if you wanted to make the panels of the container display vertically you could add: 'flex-direction: column;' */
+    width: 90vw;
+    /**  it's taking up 90 out of 100 of the viewport width   */
+}
+
+.panel {
+    /*!  'background-size: auto 100%;' was the original code however there was a note to change 'auto 100%' to 'cover' to preserve rounded corners on large screens   */
+    background-size: cover;
+    /*  could only see a portion of the image previously but shows more of the image  */
+    background-position: center;
+    background-repeat: no repeat;
+    height: 80vh;
+    /*    80 out of 100 viewport width so that it does take up the whole viewport */
+    border-radius: 50px;
+    /* makes panel the border rounded    */
+    color: #fff;
+    /* makes the color of the text inside white    */
+    cursor: pointer;
+    /*will have a cursor when hovering over the panels    */
+    flex: 0.5;
+    /*  all panels will be even in size however in the active class 'flex' will  be changed to have a higher value    */
+    margin: 10px;
+    /*    separates the panels    */
+    position: relative;
+    /*?  unsure what was meant but said that he wanted to position the h3s inside absolute: which means the h3 container div(panel element) has to be relative  */
+    transition: flex 0.7s ease-in;
+    /*  allows panel to transition from the previous panel to the current panel when clicked to become active   */
+}
+
+.panel h3 {
+    font-size: 24px;
+    position: absolute;
+    /*? position is absolute for the text, which is why panel position was made relative   */
+    bottom: 20px;
+    left: 20px;
+    /*  the 2 previous code positions the code on the bottom left corner of the panel */
+    margin: 0;
+    opacity: 0;
+    /*  makes  text invisible but will eventually code so that when the panel is active the text will be visible    */
+}
+
+.panel.active {
+    flex: 5;
+    /*  is basically saying that if the panel div also has an active class we'll change 'flex' from 0.5(initial value) to 5, which makes the active panel wider*/
+}
+
+.panel.active h3 {
+    opacity: 1;
+    /*  all other panels h3 text are invisible but when the panel is active the h3 text on that panel will become visible   */
+    transition: opacity 0.3s ease-in 0.4s;
+    /*   gets rid of the weird drop down effect when the panel(card) expands, and changes it so that the H3 text doesn't fade in until the panel(card) is fully expanded making it a lot smoother than how it was before */
+}
+
+@media (max-width: 480px) {
+
+    /*
+    done so that when the screen is small only 3 out of the 5 panels(cards) are visible
+    Any styles that are put in this media query are only going to take effect if the screen size is under max value
+    You can use either a min or a max width so if you use a min width styles will only take effect if the screen size is higher than the min value
+    */
+    .container {
+        width: 100vw;
+        /*    container was originally set at 90vw but was changed to 100vw on small screens so that it takes up more room so there's a little extra space for the panels  */
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+        /*
+        removing the 2 panels by calling 'panel' then using a pseudo selector by using the ':' then 'nth-of-type() and because we want to remove the last 2 panels we use the values '4' and '5' of the 5 total panels
+        */
+        display: none;
+        /*   gets rid of the 2 panels    */
+    }
+
+    /*! unsure why this is not working  */
+}

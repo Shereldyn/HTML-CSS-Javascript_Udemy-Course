@@ -77,7 +77,8 @@ body {
     /*   gets rid of the weird drop down effect when the panel(card) expands, and changes it so that the H3 text doesn't fade in until the panel(card) is fully expanded making it a lot smoother than how it was before */
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
+    /** had to change max-width from 480px to 500px because the web browser doesn't get smaller than 480px on my laptop  */
 
     /*
     done so that when the screen is small only 3 out of the 5 panels(cards) are visible
@@ -98,5 +99,4 @@ body {
         /*   gets rid of the 2 panels    */
     }
 
-    /*! unsure why this is not working  */
 }

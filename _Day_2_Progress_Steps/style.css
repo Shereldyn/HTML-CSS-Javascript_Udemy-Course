@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+/*changed to Muli font*/
+
+:root {
+    /**custom properties: are variables, and allows so that if you want to change the colors you can do so easily from here*/
+    --line-border-fill: #3498db;
+    --line-border-empty: #e0e0e0;
+    /** --variable-name: property;   */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6f7fb;
+    font-family: 'Muli', sans-serif;
+    /*changed to Muli font*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.progress-container {
+    /**wraps around everything pertaining to the progress bar namely the circles and the progress line*/
+    display: flex;
+    /*flex row*/
+    justify-content: space-between;
+    /**takes the remaining space after the elements and distributes the pace evenly between the elements*/
+    position: relative;
+    /*relative so that can position everything inside of it absolute*/
+    margin-bottom: 30px;
+    /*makes a margin to push other elements outside the container away from below the container*/
+    max-width: 100%;
+    /*dictates the amount of space the elements may remain within the total space of 350px*/
+    width: 350px;
+    /*amount of space the container may consume*/
+}
+
+.progress-container::before {
+    /*?before pseudo selector, faint grey line behind the progress line*/
+    content: '';
+    /*?when using the before or after pseudo selector you have to have content(and set it to an empty string*/
+    background-color: var(--line-border-empty);
+    /*co-ordinates are the same as the progress line*/
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    /*100% because it represents the empty line*/
+    z-index: -1;
+    /*no transition because its not going to do anything, it's just the line behind the progress line*/
+}
+
+.progress {
+    /*progress line*/
+    background-color: var(--line-border-fill);
+    position: absolute;
+    top: 50%;
+    /**middle vertically however is not directly in the middle, the top of the line is in the middle*/
+    left: 0;
+    transform: translateY(-50%);
+    /*?results in the line being exactly in the middle*/
+    height: 4px;
+    width: 0%;
+    /*starts at 0 because the progress line will start at the beginning*/
+    z-index: -1;
+    /**ensures that the line is behind the circles and numbers*/
+    transition: 0.4s ease;
+    /*allows the line to transition in a certain duration and not just flick from point to the next or before*/
+}
+
+.circle {
+    background-color: #fff;
+    color: #999;
+    border-radius: 50%;
+    /*required it to be round so it is 50%*/
+    height: 30px;
+    width: 30px;
+    /*to center the numbers in the circle the below 3 stylings are required*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*centers numbers*/
+    border: 3px solid var(--line-border-empty);
+    transition: .4s ease;
+    /*transition as the border will change depending on where the active position is*/
+}
+
+.circle.active {
+    border-color: var(--line-border-fill);
+    /*if it has the active class it will change color*/
+}
+
+.btn {
+    background-color: var(--line-border-fill);
+    color: #fff;
+    /*color within*/
+    border: 0;
+    /*set to 0 to remove border*/
+    border-radius: 6px;
+    cursor: pointer;
+    /*changes cursor to a pointer*/
+    font-family: inherit;
+    /*?inherits the font family of ...*/
+    padding: 8px 30px;
+    /*prevents the buttons and all other elements from being directly next to each other*/
+    margin: 5px;
+    font-size: 14px;
+}
+
+.btn:active {
+    transform: scale(0.98);
+    /*makes button a little smaller when clicked*/
+}
+
+.btn:focus {
+    outline: 0;
+    /*removes outline*/
+}
+
+.btn:disabled {
+    background-color: var(--line-border-empty);
+    /*changes the color of the button when disabled*/
+    cursor: not-allowed;
+    /*makes it so that when you have the mouse over the button it'll show the not allowed cursor so that you know you can't click the button*/
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    -->
+    <link rel="stylesheet" href="style.css">
+    <title>Progress Steps</title>
+</head>
+
+<body>
+    <div class="container"> <!--Container around everything-->
+        <div class="progress-container"> <!--wraps around the elements of the progress bar but not the buttons-->
+            <div class="progress" id="progress"></div>
+            <!--*nothing goes inside the progress div, used for styling and for creating the progress line-->
+            <div class="circle active">1</div> <!--inside progress container but after progress div-->
+            <!--*depending on which class of circle is active, the styling will be different-->
+            <div class="circle">2</div>
+            <div class="circle">3</div>
+            <div class="circle">4</div>
+        </div>
+
+        <button class="btn" id="prev"
+            disabled>Prev</button><!--outside progress container but still with regular container-->
+        <!--*disabled by default because progress bar will start at 1 and won't be able to go previous if the bar is at 1-->
+        <button class="btn" id="next">Next</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

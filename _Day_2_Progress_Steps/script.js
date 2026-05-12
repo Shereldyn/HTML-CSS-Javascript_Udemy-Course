@@ -29,7 +29,7 @@ prev.addEventListener('click', () => {  //listens for a click and runs a functio
 })
 
 function update() {
-    circles.forEach((circle, idx) => {  //?loops through node list('circles') while taking note of the circle, index values
+    circles.forEach((circle, idx) => {  //loops through node list('circles') while calling the circle, index values
         if (idx < currentActive) {   //checks for each circle if the index is less than the current active
             circle.classList.add('active')  //if true then adds the active class to that circle
         } else {
@@ -39,8 +39,9 @@ function update() {
 
     const actives = document.querySelectorAll('.active')    //calls and creates variable for the active classes
 
-    progress.style.width = (actives.length - 1) / (circles.length - 1) * 100 + '%'  //?gets the % of the progress width(by setting width to 100) then ...
-    //*active.length reveals the number of actives, whereas circles.active will always be 4 because that is thee number of circles present
+    progress.style.width = (actives.length - 1) / (circles.length - 1) * 100 + '%'  //*calculates the width and styles the line so that it turns blue as we progress through the steps
+    //*active.length reveals the number of actives, whereas circles.active will always be 4 because that is the number of circles present
+    //The reason for the '-1' in the code is because there 3 steps in the line which will light up and not 4 steps, if we coded according to 4 steps the line would not align with the circles.
 
     if (currentActive === 1) {  //check the current active is equal to 1
         prev.disabled = true    //if true previous button becomes disabled
@@ -51,5 +52,3 @@ function update() {
         next.disabled = false
     }
 }
-
-//can be used for in any kind of steps: shopping cart, any kind of form, etc.

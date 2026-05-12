@@ -45,9 +45,10 @@ body {
 }
 
 .progress-container::before {
-    /*?before pseudo selector, faint grey line behind the progress line*/
+    /** ::before is a pseudo-element, that inserts some content before the content of the specified element('.progress-container')*/
+    /** A CSS pseudo-element is a keyword that can be added to a selector(), to style a specific part of an element. Pseudo elements are denoted by a double colon(::) followed by the pseudo-element name.*/
     content: '';
-    /*?when using the before or after pseudo selector you have to have content(and set it to an empty string*/
+    /**when using the before or after pseudo-selector you have to have content and if you don't have content, you set it to an empty string*/
     background-color: var(--line-border-empty);
     /*co-ordinates are the same as the progress line*/
     position: absolute;
@@ -69,7 +70,8 @@ body {
     /**middle vertically however is not directly in the middle, the top of the line is in the middle*/
     left: 0;
     transform: translateY(-50%);
-    /*?results in the line being exactly in the middle*/
+    /*results in the line being exactly in the middle*/
+    /**The translateY() function allows you to re-position an element along the y-axis(vertically), and this function is used within the transform property.*/
     height: 4px;
     width: 0%;
     /*starts at 0 because the progress line will start at the beginning*/

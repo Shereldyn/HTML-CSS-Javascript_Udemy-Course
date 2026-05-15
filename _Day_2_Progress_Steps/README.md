@@ -1,4 +1,4 @@
-#Day 2 Progress Steps Project
+# Day 2 Progress Steps Project
 
 <h3>Description of project</h3>
 

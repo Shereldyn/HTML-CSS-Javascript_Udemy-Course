@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #333;
+    color: #222;
+    overflow-x: hidden;
+    /**was changed from 'overflow: hidden' to 'overflow-x: hidden', it only hides the scroll bar on the x-axis(scroll bar from left to right), we want to be able to scroll up and down*/
+    margin: 0;
+}
+
+.container {
+    background-color: #fafafa;
+    transform-origin: top left;
+    /**when using transform origin the origin by default will be in the middle, however we want the container to rotate from the top left position*/
+    transition: transform 0.5s linear;
+    /*We want the rotation to be smooth instead of a flick so we add a transition for thee  transform property.*/
+    width: 100vw;
+    /*takes up the whole viewport horizontally*/
+    min-height: 100vh;
+    /*whole viewport*/
+    padding: 50px;
+    /*50px all the way around thee viewport*/
+}
+
+.container.show-nav {
+    transform: rotate(-20deg);
+    /*when the container has the class of 'show-nav' the container will rotate using the 'transform' property and 'rotate()'*/
+}
+
+.circle-container {
+    /*container around the circle and navigation icons/buttons contained within the circle*/
+    position: fixed;
+    /**'circle-container' will stay fixed to the top left of the page no matter what*/
+    top: -100px;
+    /*want it to be a half circle at the edge of the page therefore set to -100px*/
+    left: -100px;
+    /*same as above*/
+}
+
+.circle {
+    /*wraps around the navigation icons/buttons*/
+    background-color: #ff7979;
+    height: 200px;
+    /**because we want a half circle(full circle but half isn't visible) we used 100px in the 'circle-container' as it is half of 200px*/
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    /*buttons within will be absolute*/
+    transition: transform 0.5s linear;
+    /*will rotate so that the visible icon/button changes*/
+}
+
+.circle button {
+    /*navigation icons/buttons*/
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    background: transparent;
+    border: 0;
+    /*removes border*/
+    font-size: 26px;
+    color: #fff;
+}
+
+.circle button:focus {
+    outline: none;
+    /*removes border when in focus state(when hovering over button)*/
+}
+
+.circle button#open {
+    /*one icon/button has an id of open*/
+    left: 60%;
+    /*this button/icon will be seen initially so this is where it will be positioned*/
+}
+
+.circle button#close {
+    /*one icon/button has an id of close*/
+    top: 60%;
+    /*60% relative to the circle*/
+    transform: rotate(90deg);
+    /*we want to rotate this close button therefore use transform*/
+    transform-origin: top left;
+}
+
+
+.content img {
+    /*my dog image*/
+    max-width: 100%;
+}

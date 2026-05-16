@@ -55,6 +55,12 @@ body {
     /*will rotate so that the visible icon/button changes*/
 }
 
+.container.show-nav .circle {
+    /*when the container has 'show-nav' applied to it, then we want to style the circle.*/
+    transform: rotate(-70deg);
+    /*rotates the circle so that the close button is visible*/
+}
+
 .circle button {
     /*navigation icons/buttons*/
     cursor: pointer;
@@ -89,8 +95,94 @@ body {
     transform-origin: top left;
 }
 
+.container.show-nav + nav li {
+    /*when we have the 'show-nav' applied to the container we want the nav list items to be visible so we style the container with the 'show-nav' tag and the direct nav list items after that*/
+    transform: translateX(0);
+    /**Setting translateX to 0 will bring all the list items back to their original place*/
+    transition-delay: 0.3s;
+    /*Creates a  transition delay so that it comes in a little bit after the rotation*/
+}
+
+/*temporarily added 'show-nav' tag to the 'container' tag prior to coding buttons so we could test the styles of the navigation items*/
+nav {
+    position: fixed;
+    /*fixes position to the bottom left*/
+    bottom: 40px;
+    /*from the bottom 40px up*/
+    left: 0;
+    z-index: 100;
+    /*?high z-index so that it's on top*/
+}
+
+nav ul {
+    /*nav unordered list*/
+    list-style-type: none;
+    /*gets rid of bullet points*/
+    padding-left: 30px;
+}
+
+nav ul li {
+    /*style the list items*/
+    text-transform: uppercase;
+    color: #fff;
+    margin: 40px 0;
+    /*40px on the top and bottom to separate the list items*/
+    transform: translateX(-100%);
+    /*we need the list items to start off more to the left of the page so that they come in to be visible when they rotate*/
+    /**to do this we need to use 'transform' and translate on the 'x-axis', and to move them left the value would need to be negative*/
+    transition: transform 0.4s ease-in;
+    /*allows the 'transform' property to transition more smoothly*/
+}
+
+nav ul li i {
+    /*navigation items icons*/
+    font-size: 20px;
+    /*made icons a little bigger*/
+    margin-right: 10px;
+    /*put some space between the icons and the texts*/
+}
+
+nav ul li + li {
+    /**because we want each of the nav items to stick out in an angle similar to the angle of the page when rotated, we style the  direct list items after the 1st item, so that the direct list items will stick out by 15px*/
+    margin-left: 15px;
+    transform: translateX(-150%);
+    /*we want the 2nd list item to start out more to the left because it still sticks out despite the 'transform: translateX(-100);' code for styling all list items*/
+}
+
+nav ul li + li + li {
+    /**for the last list item to stick out even more we style the last list item so that it sticks out by 30px*/
+    margin-left: 30px;
+    transform: translateX(-200%);
+    /*we want the 3rd list item to start out more to the left because it still sticks out despite the 'transform: translateX(-100);' code for styling all list items*/
+}
 
 .content img {
     /*my dog image*/
     max-width: 100%;
+}
+
+.content {
+    /*contains article name, author name, 1st paragraph, heading, image, 2nd paragraph*/
+    max-width: 1000px;
+    margin: 50px auto;
+    /*50 pixels on the top and bottom*/
+    /*auto on the left and right, keeps it in the middle so even if we adjust the window size the content will have 1000px width max*/
+}
+
+.content h1 {
+    /*Amazing Article*/
+    margin: 0;
+    /*removes margin*/
+}
+
+.content small {
+    /*Florin Pop*/
+    color: #555;
+    font-style: italic;
+}
+
+.content p {
+    /*both paragraphs contained within 'content'*/
+    color: #333;
+    line-height: 1.5;
 }

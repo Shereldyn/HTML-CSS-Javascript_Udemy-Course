@@ -2,7 +2,7 @@
 
 <h2>Description of project</h2>
 
-<li>We will have a simple article, this could be for anything at all, any website, any blog, etc.</li> 
+<li>We will have a simple article, this could be for anything at all, any website, any blog, any application, etc.</li> 
 <li>And up on the top left of the page we will have a little navigation icon placed on a circle, where circle's center is placed on the corner of the screen.</li>
 <li>Clicking on the navigation icon will rotate the entire website, the entire container. It'll also bring the navigation items from the side.</li>
 <li>And then the navigation icon will change, there are two navigation icons: open and close.</li>

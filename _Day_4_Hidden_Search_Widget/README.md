@@ -8,6 +8,11 @@
 <li> And as soon as I click it, it fires off a JavaScript event that activates a specific class where we add a transition for the width of the input to get wider and the button to move over using a 'transform: translateX();' style property.</li>
 <li>If clicked again it's going to shrink back up.</li>
 <li>So we'll be using CSS transitions along with just a little bit of JavaScript to add the event and toggle the class.</li>
-<li></li>
 
 <h3>Coding Notes</h3>
+
+The <b>toggle()</b> method adds and removes a class name from an element in JavaScript. <br>
+<u>Example</u>: 'search.classList.toggle('active');'
+
+The <b>focus()</b> method gives focus to an element (if it can be focused). The focused element is the element that will receive keyboard and similar events by default. <br>
+<u>Example</u>: 'input.focus();'

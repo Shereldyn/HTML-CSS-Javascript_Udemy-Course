@@ -4,14 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!--search icon for the button-->
     <link rel="stylesheet" href="style.css">
-    <title>Hidden Search Widget</title>
+    <title>Hidden Search</title>
 </head>
 
 <body>
-    <h1>Project Starter</h1>
-
+    <div class="search"> <!--wraps both the input and the button, when assigned the class of 'active' the input will expand and the button will move over-->
+        <input type="text" class="input" placeholder="Search..."> <!--input-->
+        <button class="btn"> <!--button-->
+            <i class="fas fa-search"></i> <!--search icon-->
+        </button>
+    </div>
     <script src="script.js"></script>
 </body>
 

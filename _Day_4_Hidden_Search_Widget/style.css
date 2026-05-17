@@ -5,12 +5,69 @@
 }
 
 body {
+    background-image: linear-gradient(90deg, #7d5fff, #7158e2);
     font-family: 'Roboto', sans-serif;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     overflow: hidden;
     margin: 0;
 }
+
+.search {
+    position: relative;
+    /*relative so things inside can be absolute*/
+    height: 50px;
+}
+
+.search .input {
+    /*TODO need to understand why the space between the two and what is being styled, what it's called*/
+    background-color: #fff;
+    border: 0;
+    font-size: 18px;
+    padding: 15px;
+    /*15px padding all around*/
+    height: 50px;
+    width: 50px;
+    /*starts off short but then will have an animation/transition to expand*/
+    transition: width 0.3s ease;
+    /*transition on the width property that's going to last 0.3 seconds*/
+}
+
+.btn {
+    /*button with the icon*/
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    /*TODO absolute within the search class/container*/
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease;
+    /*transition for when the button is pushed over, as the input expands*/
+}
+
+.btn:focus,
+.input:focus {
+    /*grabs both the button and input when they're in their focus state and removes any outlines*/
+    outline: none;
+}
+
+.search.active .input {
+    /*if the search class has an active class then grabs the input*/
+    width: 200px;
+    /*when search has the active class, then the input's width will go from 50px to 200px*/
+}
+
+.search.active .btn {
+    /*if the search class has an active class then we grab the button*/
+    transform: translateX(198px);
+    /*when the search has the class of active on it, then we want to take the button and we want to set transform and we want to move it along the x-axis.*/
+}
+
+/*TODO And when we when it's active, the, the input here will expand and the button will move over.
+And we wanted to start with just just showing the button.*/

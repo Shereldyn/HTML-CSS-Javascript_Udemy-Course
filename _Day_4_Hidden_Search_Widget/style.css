@@ -69,5 +69,4 @@ body {
     /*when the search has the class of active on it, then we want to take the button and we want to set transform and we want to move it along the x-axis.*/
 }
 
-/*TODO And when we when it's active, the, the input here will expand and the button will move over.
-And we wanted to start with just just showing the button.*/
+/*We wanted to start with just showing the button however when the search div is active, the input will expand and the button will move over.*/

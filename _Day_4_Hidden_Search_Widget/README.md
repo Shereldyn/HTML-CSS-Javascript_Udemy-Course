@@ -10,6 +10,7 @@
 <li>So we'll be using CSS transitions along with just a little bit of JavaScript to add the event and toggle the class.</li>
 
 <h3>Coding Notes</h3>
+<u><h4 style="font-size: 17px;">JavaScript</h4></u>
 
 The <b>toggle()</b> method adds and removes a class name from an element in JavaScript. <br>
 <u>Example</u>: 'search.classList.toggle('active');'

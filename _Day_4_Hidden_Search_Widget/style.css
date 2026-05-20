@@ -22,7 +22,8 @@ body {
 }
 
 .search .input {
-    /*TODO need to understand why the space between the two and what is being styled, what it's called*/
+    /**The space between '.search .input' is a descendant combinator which matches all elements that are descendants (children, grandchildren, etc.) of a specified element.
+    The input class within the search class is being styled*/
     background-color: #fff;
     border: 0;
     font-size: 18px;
@@ -42,7 +43,6 @@ body {
     cursor: pointer;
     font-size: 24px;
     position: absolute;
-    /*TODO absolute within the search class/container*/
     top: 0;
     left: 0;
     height: 50px;

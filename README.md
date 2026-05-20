@@ -2,57 +2,55 @@
 
 This is a purely project-based course. This course includes 50+ mini projects in HTML, CSS & JavaScript that relate to the DOM (Document Object Model). These projects will be completed over the course of 50 days.
 
-<b>Here is a list of what we will create in this course:</b>
-<ol>
-  <li>Expanding Cards</li>
-  <li>Progress Steps</li>
-  <li>Rotating Navigation Animation</li>
-  <li>Hidden Search Widget</li>
-  <li>Blurry Loading</li>
-  <li>Scroll Animation</li>
-  <li>Split Landing Page</li>
-  <li>Form Wave</li>
-  <li>Sound Board</li>
-  <li>Dad Jokes</li>
-  <li>Event Keycodes</li>
-  <li>Faq Collapse</li>
-  <li>Random Choice Picker</li>
-  <li>Animated Navigation</li>
-  <li>Incrementing Counter</li>
-  <li>Drink Water</li>
-  <li>Movie App</li>
-  <li>Background Slider</li>
-  <li>Theme Clock</li>
-  <li>Button Ripple Effect</li>
-  <li>Drag N Drop</li>
-  <li>Drawing App</li>
-  <li>Kinetic Loader</li>
-  <li>Content Placeholder</li>
-  <li>Sticky Navbar</li>
-  <li>Double Vertical Slider</li>
-  <li>Toast Notification</li>
-  <li>Github Profiles</li>
-  <li>Double Click Heart</li>
-  <li>Auto Text Effect</li>
-  <li>Password Generator</li>
-  <li>Good Cheap Fast</li>
-  <li>Notes App</li>
-  <li>Animated Countdown</li>
-  <li>Image Carousel</li>
-  <li>Hoverboard</li>
-  <li>Pokedex</li>
-  <li>Mobile Tab Navigation</li>
-  <li>Password Strength Background</li>
-  <li>3d Background Boxes</li>
-  <li>Verify Account UI</li>
-  <li>Live User Filter</li>
-  <li>Feedback UI Design</li>
-  <li>Custom Range Slider</li>
-  <li>Netflix Mobile Navigation</li>
-  <li>Quiz App</li>
-  <li>Testimonial Box Switcher</li>
-  <li>Random Image Feed</li>
-  <li>Todo List</li>
-  <li>Insect Catch Game</li>
-  <li>Simple Timer (Bonus Day 1)</li>
-</ol>
+**Here is a list of what we will create in this course:**
+1. Expanding Cards
+2. Progress Steps
+3. Rotating Navigation Animation
+4. Hidden Search Widget
+5. Blurry Loading
+6. Scroll Animation
+7. Split Landing Page
+8. Form Wave
+9. Sound Board
+10. Dad Jokes
+11. Event Keycodes
+12. Faq Collapse
+13. Random Choice Picker
+14. Animated Navigation
+15. Incrementing Counter
+16. Drink Water
+17. Movie App
+18. Background Slider
+19. Theme Clock
+20. Button Ripple Effect
+21. Drag N Drop
+22. Drawing App
+23. Kinetic Loader
+24. Content Placeholder
+25. Sticky Navbar
+26. Double Vertical Slider
+27. Toast Notification
+28. Github Profiles
+29. Double Click Heart
+30. Auto Text Effect
+31. Password Generator
+32. Good Cheap Fast
+33. Notes App
+34. Animated Countdown
+35. Image Carousel
+36. Hoverboard
+37. Pokedex
+38. Mobile Tab Navigation
+39. Password Strength Background
+40. 3d Background Boxes
+41. Verify Account UI
+42. Live User Filter
+43. Feedback UI Design
+44. Custom Range Slider
+45. Netflix Mobile Navigation
+46. Quiz App
+47. Testimonial Box Switcher
+48. Random Image Feed
+49. Todo List
+50. Insect Catch Game
+51. Simple Timer (Bonus Day 1)

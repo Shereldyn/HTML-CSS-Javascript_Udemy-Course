@@ -23,7 +23,6 @@ A CSS **pseudo-element** is a keyword that can be added to a selector(used to fi
 - `::marker` styles list item markers, example the bullets or numbers in a list.
 - `::selection` styles user-selected text(when text is clicked the text style will change accordingly).
 - `::backdrop` styles the viewbox behind the dialog box or popover element.
-<br>
 
 >#### **Notes**
 >Several pseudo elements can also be combined, you merely need to style them separately while using the same selector.<br>

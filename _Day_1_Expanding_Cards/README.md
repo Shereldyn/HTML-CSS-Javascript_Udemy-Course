@@ -9,6 +9,33 @@
 - We'll be using only background images and headings, but we could even make these into testimonials or FAQs, or whatever it might be.
 
 ## Coding Notes
+
+>#### **What is DOM?**
+>*Laymen explanation/example:* <br>
+>Imagine you are a delivery person and need to drop off several packages to a neighborhood. Inside the neighborhood, there are 7 streets and 73 houses and you have 5 packages. There are 2 ways you can make your deliveries.
+>* Have a description of the house you are looking for. 'The blue house with the name Smith on the mailbox'.
+>* Having an address book with all the addresses to the houses.
+>
+>Obviously, option 2 would be more efficient.
+>
+>The DOM is the 'address book' for the web page. It is used to identify different elements (houses) like input boxes or div tags.
+>
+>We can use Javascript to access the DOM to identify and interact with different elements on the page.
+>
+>To add an item to the DOM, we give it a unique ID. input type="text" id="first-name".
+>
+>*Note that page items can have the same name, but must have different id's. For example* <br>
+>`input type="radio" name="gender" id="male" value="male"` <br>
+>`input type="radio" name="gender" id="female" value="female"`
+>
+>Notice that these two radio buttons have the same name, but different id's. When the form is submitted - we can get gender="female" but on the page, if we need to work with one or the other, we can specify the exact id.
+>
+>Assigning an ID is like giving a house an address. But we don't give addresses to the swimming pool, the garden shed etc, because that would make the phone book way too thick.
+>
+>In the same way, if we don't need to give an item an ID tag, you can leave it off, so the DOM does not get cluttered.
+
+
+
 ### CSS
 
 **CSS selectors** are used to "find" (or select) the HTML elements you want to style.

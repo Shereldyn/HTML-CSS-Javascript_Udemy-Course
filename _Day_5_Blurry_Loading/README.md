@@ -11,4 +11,36 @@
 
 ## Coding Notes
 ### CSS
+Lines 25–26 are:
+
+```css
+width: calc(100vw + 60px);
+height: calc(100vh + 60px);
+```
+
+- `100vw` means 100% of the browser window’s width.
+- `100vh` means 100% of the browser window’s height.
+- `calc(...)` performs a calculation.
+- Adding `60px` makes the background 30px larger on each side because it is positioned at `top: -30px` and `left: -30px`.
+
+This extra space prevents the blur effect from revealing blank edges around the image.
+
+### Javascript
+The `$` is part of JavaScript’s **template literal interpolation** syntax.
+
+In this code:
+
+```js
+`blur(${scale(load, 0, 100, 30, 0)}px)`
+```
+
+`${...}` means: **evaluate the JavaScript expression inside the braces and insert its result into the string**.
+
+For example, if `scale(...)` returns `15`, the result becomes:
+
+```js
+"blur(15px)"
+```
+
+The backticks `` ` `` are required for template literals. `$` by itself is not special here; the complete syntax is `${...}`.
 

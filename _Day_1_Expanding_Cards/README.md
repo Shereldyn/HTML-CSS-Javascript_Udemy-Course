@@ -50,7 +50,7 @@ We can divide CSS selectors into five categories:
 >#### **Notes**
 >**Grouping Selector:** selects all the HTML elements with the same style definitions. It is better to group the selectors, to minimize code. To group selectors, separate each selector with a comma.<br>
 >Example:<br>
->```
+>```css
 >h1, h2, p {
 >    text-align: center;
 >    color: red;

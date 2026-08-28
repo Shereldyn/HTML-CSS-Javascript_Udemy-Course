@@ -12,6 +12,20 @@
 ### Coding notes
 ### CSS
 
+**Code structure**
+
+- `:root` stores reusable CSS variables.
+- `*` applies `box-sizing` globally.
+- `body` centers the application.
+- `.container` wraps the entire interface.
+- `.progress-container` holds the circles and progress line.
+- `.progress-container::before` creates the gray background line without another HTML element.
+- `.progress` is the blue line whose width grows.
+- `.circle` styles every numbered step.
+- `.circle.active` styles completed/current steps.
+- `.btn` styles both buttons.
+- `.btn:active`, `.btn:focus`, and `.btn:disabled` style specific button states.
+
 A **selector** is used to find or select the HTML element you want to style.
 A CSS **pseudo-element** is a keyword that can be added to a selector(used to find or select the HTML element you want to style), to style a specific part of an element. Pseudo elements are denoted by a double colon(`::`) followed by the pseudo-element name, example `p::before`. 
 
@@ -27,7 +41,7 @@ A CSS **pseudo-element** is a keyword that can be added to a selector(used to fi
 >#### **Notes**
 >Several pseudo elements can also be combined, you merely need to style them separately while using the same selector.<br>
 >Example:
->```
+>```css
 >p::first-letter {
 >    color: red;
 >    font-size: xx-large;

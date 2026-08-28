@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #efedd6;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*//height: 100vh;*/
+    /*//overflow: hidden;*/
+    /*!lines 14 and 15 were removed because they were causing issues with the scroll animation, namely line 14 limited the height of the body to the viewport height and line 15 prevented scrolling*/
+    margin: 0;
+}
+
+h1 {
+    margin: 10px;
+}
+
+.box {
+    background-color: steelblue;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+    /*not necessary for the scroll animation but makes the boxes look better*/
+    transform: translateX(400%);
+    /**this line is what makes the boxes start off the screen to the right, so they can slide in when scrolled into view*/
+    transition: transform 0.4s ease;
+    /**this line is what makes the boxes slide in smoothly when scrolled into view*/
+}
+
+.box:nth-of-type(even) {
+    /*pseudoclass selector for even-numbered boxes*/
+    transform: translateX(-400%);
+    /**this line is what makes the even boxes start off the screen to the left, so they can slide in when scrolled into view*/
+}
+
+.box.show {
+    transform: translateX(0);
+}
+
+.box h2 {
+    font-size: 45px;
+}

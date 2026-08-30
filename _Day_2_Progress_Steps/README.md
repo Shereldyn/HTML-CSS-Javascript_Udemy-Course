@@ -1,6 +1,6 @@
 # Day 2 Progress Steps Project
 
-## Description of project
+## **Description of project**
 
 - In this project, we're going to build some progress steps.
 - These can be found in different kinds of websites with forms example like multi-level forms, shopping carts, etc.
@@ -9,8 +9,8 @@
 - The buttons will allow us to go to the previous or the next point.
 - However the previous button will be disabled while on the first step/point and the next button while on the last.
 
-### Coding notes
-### CSS
+## **Coding notes**
+## *<b>CSS</b>*
 
 **Code structure**
 

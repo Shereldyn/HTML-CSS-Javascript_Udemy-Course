@@ -1,6 +1,6 @@
 # Day 1 Expanding Cards
 
-## Description of project
+## **Description of project**
 
 - In this project, we're going to build some expanding cards, we were going to style panels to have a background image and a heading.
 - We're going to use Flexbox to align everything and then add a little bit of JavaScript so that when we click one of the panels, it changes the class to active and it then expands with a CSS transition.
@@ -8,7 +8,7 @@
 - Due to the transitions we'll see the heading doesn't come in until the card is fully expanded.
 - We'll be using only background images and headings, but we could even make these into testimonials or FAQs, or whatever it might be.
 
-## Coding Notes
+## **Coding Notes**
 
 >#### **What is DOM?**
 >*Laymen explanation/example:* <br>
@@ -36,7 +36,7 @@
 
 
 
-### CSS
+## *<b>CSS</b>*
 
 **CSS selectors** are used to "find" (or select) the HTML elements you want to style.
 

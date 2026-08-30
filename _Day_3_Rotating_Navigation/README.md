@@ -1,6 +1,6 @@
 # Day 3 Rotating Navigation
 
-## Description of project
+## **Description of project**
 
 - We will have a simple article, this could be for anything at all, any website, any blog, any application, etc.
 - And up on the top left of the page we will have a little navigation icon placed on a circle, where circle's center is placed on the corner of the screen.
@@ -10,8 +10,8 @@
 - We will need a little bit of JavaScript to be able to add and remove the specific class(`showNAV`), this will rotate and bring the menu back in.
 - This project will mostly deal with CSS. When the `showNav` class is present, the only Javascript we'll need is to add or remove the when we click the navigation icon/button.
 
-### Coding notes
-### CSS
+## **Coding notes**
+## *<b>CSS</b>*
 
 The `Transform-origin` property allows you to change the position of transformed elements.
 >#### **Notes**

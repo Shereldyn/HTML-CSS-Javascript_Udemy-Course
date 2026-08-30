@@ -1,6 +1,6 @@
-# Day 5 Blurry Loading
+# Day 6 Scroll Animation
 
-## Description of project
+## **Description of project**
 
 - In this project we're going to build a scroll animation, which is pretty simple and useful.
 - You may have come across different sites where as scroll the page move/travel into view from, seemingly, off the page.
@@ -12,8 +12,8 @@
 - And then if we go back up, it'll remove the class when it hits the trigger point making the box to slide back out.
 - This is very useful as we can use this in a lot of different UI's and different websites.
 
-## Coding Notes
-### CSS
+## **Coding Notes**
+## *<b>CSS</b>*
 In this scroll-animation project, keeping `height: 100vh` and `overflow: hidden` active would be harmful:
 
 - `height: 100vh` limits the body to the viewport height.
@@ -144,7 +144,7 @@ transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 
 So, in short: `transform` defines the box’s position, while `transition` controls how smoothly the box moves between positions.
 
-### Javascript
+## *<b>Javascript</b>*
 
 
 The `Element.getBoundingClientRect()` method returns a DOMRect object providing information about the size of an element and its position relative to the viewport.

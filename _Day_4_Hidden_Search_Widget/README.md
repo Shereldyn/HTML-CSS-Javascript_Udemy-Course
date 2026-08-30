@@ -1,6 +1,6 @@
 # Day 4 Hidden Search Widget
 
-## Description of project
+## **Description of project**
 
 - This is one of the shortest projects in this course.
 - It's a cool little widget that you can add to your website or to your application, it's a hidden search.
@@ -9,8 +9,8 @@
 - If clicked again it's going to shrink back up.
 - So we'll be using CSS transitions along with just a little bit of JavaScript to add the event and toggle the class.
 
-## Coding Notes
-### CSS
+## **Coding Notes**
+## *<b>CSS</b>*
 
 The **toggle()** method adds and removes a class name from an element in JavaScript. <br>
 Example: `search.classList.toggle('active');`

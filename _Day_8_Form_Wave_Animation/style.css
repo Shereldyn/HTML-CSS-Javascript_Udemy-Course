@@ -1,11 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    background-color: steelblue;
+    color: #fff;
+    font-family: 'Muli', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,4 +15,105 @@ body {
     height: 100vh;
     overflow: hidden;
     margin: 0;
+}
+
+.container {
+    /*is the dark blue surrounding labels and button*/
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 40px;
+    border-radius: 5px;
+    /*rounds out the edges of the box/container*/
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container a {
+    text-decoration: none;
+    /*removes underline from link*/
+    color: lightblue;
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    background: lightblue;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 16px;
+    border: 0;
+    border-radius: 5px
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:active {
+    transform: scale(0.98);
+    /*scales the button down a bit when clicked*/
+}
+
+.text {
+    margin-top: 30px;
+    /*makes the bottom text move down a bit*/
+}
+
+.form-control {
+    position: relative;
+    /*form is relative so that labels are absolute within*/
+    margin: 20px 0 40px;
+    /*
+    This is the breakdown of the above code
+    #margin-top: 20px;
+    #margin-right: 0;
+    #margin-bottom: 40px;
+    #margin-left: 0;
+    *adds space above and below each form control
+    */
+    width: 300px;
+}
+
+.form-control input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #fff solid;
+    /*border was removed in the  previous line but this line creates a border for the bottom*/
+    display: block;
+    /*gives the labels their own lines instead of being inline with the inputs*/
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+    outline: 0;
+    /*when clicked or when valid removes the outline around the input*/
+    border-bottom-color: lightblue;
+    /*bottom border turns lightblue along with the labels*/
+}
+
+.form-control label {
+    position: absolute;
+    /*removes the labels from the normal layout and lets you place it precisely hence why the labels are able to go on top of the inputs*/
+    top: 15px;
+    left: 0;
+}
+
+.form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+    color: lightblue;
+    transform: translateY(-30px);
 }

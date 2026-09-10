@@ -114,5 +114,192 @@ Keep in mind that browser validation only provides basic checking. A server shou
 
 ## *<b>CSS</b>*
 
+I’ll check the surrounding CSS and the related HTML so the four margin values can be explained in the layout they actually affect.
+
+Read , lines 55 to 75
+
+Read 
+
+```css
+margin: 20px 0 40px;
+```
+
+This is the three-value shorthand for:
+
+```css
+margin-top: 20px;
+margin-right: 0;
+margin-bottom: 40px;
+margin-left: 0;
+```
+
+It applies to each `.form-control` `<div>`, which contains an input and its label.
+
+- `20px` adds space above each form control.
+- `0` adds no horizontal margin.
+- `40px` adds extra space below each form control.
+
+The result is vertical spacing between the email and password fields while keeping the form controls aligned at the same horizontal position.
+
+CSS margin shorthand follows this order when there are three values:
+
+```text
+top | left-and-right | bottom
+```
+
+>### **Note:**
+>- `margin` controls space <u>outside</u> the element.
+>- `padding` controls space <u>inside</u> the element.
+
+From line 91 to the end:
+
+```css
+.form-control input:focus,
+.form-control input:valid {
+    outline: 0;
+}
+```
+
+This targets an input when either condition is true:
+
+- `:focus` means the user has clicked into or selected the input.
+- `:valid` means the input passes HTML validation. Because your inputs have `required`, a non-empty value is considered valid.
+
+The comma means “apply this rule to either selector.”
+
+```css
+outline: 0;
+```
+
+removes the browser’s default focus outline around the input.
+
+The input still shows its bottom border:
+
+```css
+border-bottom: 2px #fff solid;
+```
+
+So this rule removes the standard browser outline to keep the design cleaner while the white bottom border remains visible.
+
+
+From line 108 onward:
+
+```css
+.form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+```
+
+This styles each individual letter inside the label.
+
+- `display: inline-block` allows each letter to move independently.
+- `font-size: 18px` sets the letter size.
+- `min-width: 5px` gives each letter a small amount of space, including spaces between words.
+- `transition` makes the movement smooth over `0.3` seconds. The `cubic-bezier(...)` value controls the bouncing style of the movement.
+
+Then:
+
+```css
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+    color: lightblue;
+    transform: translateY(-30px);
+}
+```
+
+This selects each label letter when:
+
+- the input is focused, or
+- the input contains a valid value
+
+The `+` means “the label immediately after the input.” Your HTML has that structure:
+
+```html
+<input type="text" required>
+<label>Email</label>
+```
+
+When the rule applies:
+
+- `color: lightblue` changes the letters to light blue.
+- `transform: translateY(-30px)` moves every letter 30 pixels upward.
+
+Because JavaScript placed every letter in its own `<span>`, the letters can be animated individually. The wave-like effect is completed by adding different transition delays to the spans.
 
 ## *<b>Javascript</b>*
+
+Line 3 onwards:
+
+```js
+labels.forEach(label => {
+```
+
+This loops through every label found on line 1. In this project, those are the `Email` and `Password` labels.
+
+```js
+label.innerHTML = label.innerText
+```
+
+Gets the label’s original text and replaces its HTML with newly created content.
+
+```js
+.split('')
+```
+
+Splits the text into individual characters:
+
+```js
+['E', 'm', 'a', 'i', 'l']
+```
+
+```js
+.map((letter, idx) => 
+  `<span style="transition-delay:${idx * 50}ms">${letter}</span>`
+)
+```
+
+Creates one `<span>` for each character.
+
+- `letter` is the current character.
+- `idx` is the character’s position, starting at `0`.
+- `idx * 50` creates a different delay for each letter.
+- `ms` means milliseconds.
+
+For `Email`, the generated HTML is approximately:
+
+```html
+<span style="transition-delay:0ms">E</span>
+<span style="transition-delay:50ms">m</span>
+<span style="transition-delay:100ms">a</span>
+<span style="transition-delay:150ms">i</span>
+<span style="transition-delay:200ms">l</span>
+```
+
+The delay causes the letters to move one after another instead of all at the same time, creating the wave effect.
+
+```js
+.join('')
+```
+
+Combines all the generated `<span>` elements into one string and places them inside the label.
+
+So the whole block changes:
+
+```html
+<label>Email</label>
+```
+
+into individually animated letters:
+
+```html
+<label>
+  <span style="transition-delay:0ms">E</span>
+  <span style="transition-delay:50ms">m</span>
+  <span style="transition-delay:100ms">a</span>
+  <span style="transition-delay:150ms">i</span>
+  <span style="transition-delay:200ms">l</span>
+</label>
+```

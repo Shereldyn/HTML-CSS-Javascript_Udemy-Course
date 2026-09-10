@@ -16,8 +16,18 @@
         <h1>Please Login</h1>
         <form> <!--*Essentially groups all the inputs within it so they are able to be submitted together-->
             <div class="form-control"> <!--*wraps around email input but has the same class as the password input because it will share the same styling-->
-                <input type="text" required>
+                <input type="text" required> <!--required results in the browser sending a validation message if the input is blank-->
                 <label>Email</label>
+                <!-- 
+                this is just a visual example of what it could look like when we wrap the span around the transitions of the letters
+                **<label>
+                **    <span style="transition-delay: 0ms;">E</span>
+                **    <span style="transition-delay: 50ms;">m</span>
+                **    <span style="transition-delay: 100ms;">a</span>
+                **    <span style="transition-delay: 150ms;">i</span>
+                **    <span style="transition-delay: 200ms;">l</span>
+                **</label> 
+                -->
             </div>
 
             <div class="form-control"> <!--wraps around password input-->

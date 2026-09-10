@@ -12,7 +12,27 @@
 </head>
 
 <body>
-    <h1>Project Starter</h1>
+    <div class="container"> <!--container wrapping around the form-->
+        <h1>Please Login</h1>
+        <form> <!--*Essentially groups all the inputs within it so they are able to be submitted together-->
+            <div class="form-control"> <!--*wraps around email input but has the same class as the password input because it will share the same styling-->
+                <input type="text" required>
+                <label>Email</label>
+            </div>
+
+            <div class="form-control"> <!--wraps around password input-->
+                <input type="password" required>
+                <label>Password</label>
+            </div>
+
+            <button class="btn">Login</button>
+
+            <p class="text">
+                Don't have an account
+                <a href="#">Register</a> <!--doesn't do anything-->
+            </p>
+        </form>
+    </div>
 
     <script src="script.js"></script>
 </body>

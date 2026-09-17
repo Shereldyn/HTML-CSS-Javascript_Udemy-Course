@@ -11,7 +11,7 @@ body {
     flex-wrap: wrap;
     /*
     //flex-direction: column;
-    
+    not used because the buttons are being arranged horizontally from left to right due to flex-wrap: wrap;
     */
     align-items: center;
     justify-content: center;

@@ -13,6 +13,16 @@
 ## **Coding Notes**
 ## *<b>HTML</b>*
 
+Line 15 creates an HTML audio element:
+
+```html
+<audio id="applause" src="sounds/applause.mp3"></audio>
+```
+
+- `id="applause"` gives it a name JavaScript can find.
+- `src="sounds/applause.mp3"` points to the sound file.
+- JavaScript can then play it when the applause button is clicked.
+
 
 ## *<b>CSS</b>*
 

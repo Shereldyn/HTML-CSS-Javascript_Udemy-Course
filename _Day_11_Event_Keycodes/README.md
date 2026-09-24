@@ -26,9 +26,6 @@
 >
 >Use `event.key` when you care about the character or key value, and `event.code` when you care about the physical keyboard key.
 
-## *<b>HTML</b>*
-
-
 ## *<b>CSS</b>*
 
 Lines 44 and 45 are still needed:

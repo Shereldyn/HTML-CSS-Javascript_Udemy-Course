@@ -1,16 +1,161 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    /*sets the font and background color*/
+    font-family: 'Muli', sans-serif;
+    background-color: #f7bef7;
+    /* 
+    //display: flex;
+    //flex-direction: column;
+    //align-items: center;
+    //justify-content: center;
+    //height: 100vh;
+    //overflow: hidden;
+    //margin: 0; 
+    going to center directly on the container
+    */
+}
+
+h1 {
+    margin: 50px 0 30px;
+    text-align: center;
+}
+
+.faq-container {
+    /*
+    container for faq list
+    *keeps the FAQ list centered and narrow
+    */
+    max-width: 600px;
+    margin: 0 auto;
+    /* 0 for top and bottom, auto for left and right*/
+}
+
+.faq {
+    /*
+    faq cards
+    *gives each question a bordered card with rounded corners
+    */
+    background-color: transparent;
+    /*the faq that is active will have a white background and the inactive faqs will have a transparent background*/
+    border: 1px solid #9fa4a8;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.faq.active {
+    /*
+    faq card when active
+    changes the background to white and adds a subtle shadow
+    */
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0, 1), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq.active::before,
+.faq.active::after {
+    /*
+    selects the front and back of the active faq element
+    *used to add decorative speech bubble icons to the front and back of the active faq element simultaneously.
+    */
+    content: '\f075';
+    font-family: 'Font Awesome 5 Free';
+    color: #2ecc71;
+    font-size: 7rem;
+    position: absolute;
+    opacity: 0.2;
+    top: 20px;
+    left: 20px;
+    z-index: 0;
+}
+
+.faq.active::before {
+    /*
+    the back of the active faq element
+    *changes the co-ordinates of back icon so that it gives a conversation effect in correspondence with the front icon
+    */
+    color: #3498db;
+    top: -10px;
+    left: -30px;
+    transform: rotateY(180deg);
+}
+
+.faq-title {
+    margin: 0 35px 0 0;
+}
+
+.faq-text {
+    /**is hidden at first with display: none*/
+    display: none;
+    margin: 30px 0 0;
+}
+
+.faq.active .faq-text {
+    /**changes it to display: block , making the answer visible*/
+    display: block;
+}
+
+/*
+We know how to insert font-awesome icons directly in HTML with specific classes BUT we can also insert them with CSS.
+In order to do this we:
+#   we go to fontawesome.com and we search for and icon.
+#   once the icon is chosen, you click the icon and then you'll be given the class to directly insert it in HTML.
+#   you will also be given the Unicode value, which we can use to insert an icon in CSS.
+#   choose the element you wish to add the icon to
+#   add content style and put Unicode in '' marks
+#   add font-family style and put 'Font Awesome 5 Free' as the value
+#   Lastly you can choose it's co-ordinates
+*/
+
+.faq-toggle {
+    /*faq toggle buttons*/
+    background-color: transparent;
+    border: 0;
+    border-radius: 50%;
+    /*button shape becomes a circle*/
+    cursor: pointer;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0;
+    font-size: 16px;
+    padding: 0;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 30px;
+    width: 30px;
+}
+
+.faq-toggle:focus {
+    outline: 0;
+    /*outline of button is removed*/
+}
+
+.faq-toggle .fa-times {
+    display: none;
+    /** x icon/button is NOT visible if fa-toggle is NOT active*/
+}
+
+.faq.active .faq-toggle .fa-times {
+    color: #fff;
+    display: block;
+    /**when fa-toggle is active x icon/button is visible and white*/
+}
+
+.faq.active .faq-toggle .fa-chevron-down {
+    display: none;
+    /**when fa-toggle is active chevron icon/button is NOT visible*/
+}
+
+.faq.active .faq-toggle {
+    background-color: #9fa4a8;
+    /*when faq-toggle is active button is grey*/
 }

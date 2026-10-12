@@ -8,11 +8,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     -->
     <link rel="stylesheet" href="style.css">
-    <title>My Project</title>
+    <title>Random Choice Picker</title>
 </head>
 
 <body>
-    <h1>Project Starter</h1>
+    <div class="container">
+        <h3>Enter all of the choices divided by a comma (',').
+            <br>Press enter when you're done.
+        </h3>
+        <textarea placeholder="Enter choices here..." id="textarea"></textarea><!--*textbox where you enter your choices-->
+
+        <div id="tags">
+            <span class="tag">Choice 1</span>
+            <span class="tag highlight">Choice 2</span>
+            <span class="tag">Choice 3</span><!--hardcoded here so that we are able to see the choices as we are styling them-->
+        </div><!--*container for choices-->
+    </div>
 
     <script src="script.js"></script>
 </body>

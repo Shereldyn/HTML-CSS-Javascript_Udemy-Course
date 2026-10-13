@@ -9,6 +9,7 @@ body {
     font-family: 'Muli', sans-serif;
     display: flex;
     flex-direction: column;
+    /*all elements will lay vertically and be able to specify positions*/
     align-items: center;
     justify-content: center;
     height: 100vh;

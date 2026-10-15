@@ -47,7 +47,7 @@ The two main timer functions are `setTimeout()` and `setInterval()`.
     - `setTimeout()` does not stop JavaScript from running other code.
     - A delay of zero milliseconds does not mean that the callback function will run immediately. It means that the callback will run as soon as the current JavaScript task has finished.
     - The delay is the earliest a callback can run, the callback may even run later if the JavaScript is busy for example if it's running a loop before the delay is completed.
-    - The `setTimeout()` function returns a timer identifier which can be passed to `clearTimeout()` to cancel the timer.
+    - The `setTimeout()` function returns a timer identifier which can be passed to `clearTimeout()` to cancel the timer...
 
 >   ### Note
 >   Timers do not interrupt running JavaScript.<br>

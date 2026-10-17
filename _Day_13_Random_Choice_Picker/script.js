@@ -18,9 +18,9 @@ textArea.addEventListener('keyup', (e) => { //listens for the user to release a 
 function createTags(input) {
     const tags = input.split(',').filter(tag => tag.trim() !== '').map(tag => tag.trim());  /*
     # takes full text from text area as one string
-    # seperates text into different choices using the comma and and place them in an array
-    # removes empty entries and trims whitespace around each item
-    # trims any whitespaces
+    # separates text into different choices using the comma and and place them in an array
+    # creates a new array(tags[]) where empty strings are removed
+    # trims whitespace around each item and returns the transformed items to the array(tags[])
     
     ////console.log(tags); checking code
     */
@@ -64,8 +64,8 @@ function pickRandomTag() {
     const tags = document.querySelectorAll('.tag'); //finds all elements with the class .tag
     return tags[Math.floor(Math.random() * tags.length)];   /* chooses a random tag and returns selected tag element
     # Math.random() gives a number between 0 and 1
-    # multiplied by tags.length gives a random index
-    # Math.floor() turns it into an integer index
+        # multiplied by tags.length gives a random index
+            # Math.floor() turns it into an integer index (because we used .random() the final index is random)
     */
 }
 

@@ -46,12 +46,27 @@ The two main timer functions are `setTimeout()` and `setInterval()`.
     ```
     - `setTimeout()` does not stop JavaScript from running other code.
     - A delay of zero milliseconds does not mean that the callback function will run immediately. It means that the callback will run as soon as the current JavaScript task has finished.
-    - The delay is the earliest a callback can run, the callback may even run later if the JavaScript is busy for example if it's running a loop before the delay is completed.
-    - The `setTimeout()` function returns a timer identifier which can be passed to `clearTimeout()` to cancel the timer...
+    - **Delays are Minimums, Not Guarantees:** A delay of `1000`ms means the callback will wait *at least* `1000` ms. If the main thread is busy running heavy synchronous code or long loops when the timer expires, the callback must wait until the main thread frees up.
+    - The `setTimeout()` function returns a timer identifier which can be passed to `clearTimeout()` to cancel the timer.
+    - You can create a repeating timer by calling `setTimeout()` again after each task finishes.
+      ```JavaScript
+      function repeat() {
+        myDisplayer("Hello");
+        setTimeout(repeat, 1000);
+      }
+
+      repeat();
+      ```
+      With **repeated `SetTimeout()`**, the next delay begins after the current callback has finished. *Repeated `setTimeout()` is useful when one task must finish before the next delay begins.*
+      >With **`setInterval()`**, the interval continues to schedule call backs at regular intervals.
 
 >   ### Note
->   Timers do not interrupt running JavaScript.<br>
+>   - Timers do not interrupt running JavaScript.<br>
 >   A long-running function can delay timer callbacks and make the page unresponsive.
+>   - Timer functions can accept strings, but strings should not be used as JavaScript Code.<br>
+>   **Not Recommended**: `setTimeout("myFunction()", 1000);`<br>
+>   **Recommended**: `setTimeout(myFunction, 1000);`
+>   Passing a function is safer, clearer, and easier to debug.
 
 - `clearTimeout()`: cancels a timeout by receiving the timer identifier from `setTimeout()`.
   ```JavaScript
@@ -84,6 +99,37 @@ The two main timer functions are `setTimeout()` and `setInterval()`.
 >function showMessage(greeting, name) {
 >  document.getElementById("demo").innerHTML = greeting + " " + name;
 >}
+
+
+#### Timers Run on the Main Thread
+
+JavaScript timers execute code asynchronously on a single main thread without pausing the application. Setting a timer acts as a minimum delay rather than a strict guarantee, meaning scheduled tasks must wait in line if the main thread is busy with other work.
+
+#### Common Timer Mistakes
+
+- **Calling the Function Immediately**
+  `setTimeout(myFunction(), 1000);`
+  Remove the parentheses when passing the function:
+  `setTimeout(myFunction, 1000);`
+- **Forgetting the Timer Identifier**
+  Saved the returned identifier if the timer must be canceled later.
+  ```JavaScript
+  const timer = setTimeout(myFunction, 1000);
+  clearTimeout(timer);
+  ```
+- **Starting Multiple Intervals**
+  Starting an interval more than once creates multiple repeating timers.
+  ```JavaScript
+  if (!timer) {
+    timer = setInterval(myFunction, 1000);
+  }
+  ```
+- **Expecting Exact Timing**
+  Timer delays are not exact schedules.
+  Callback run only when JavaScript is ready.
+- **Forgetting to Stop an Interval**
+  And interval continues until it is stopped or the page is closed.
+  `clearInterval(timer);`
 
 
 

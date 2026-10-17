@@ -33,7 +33,7 @@
 
 `filter()`: is a high order array method that allows you to return certain things based on a conditional
 
-### JavaScript Timers
+### **JavaScript Timers**
 JavaScript timers let you run a function after a delay or repeatedly at fixed intervals.<br>
 The two main timer functions are `setTimeout()` and `setInterval()`.
 - `setTimeout()`: schedules a function to run once after a delay.
@@ -101,50 +101,76 @@ The two main timer functions are `setTimeout()` and `setInterval()`.
 >}
 
 
-#### Timers Run on the Main Thread
+#### **Timers Run on the Main Thread**
 
-JavaScript timers execute code asynchronously on a single main thread without pausing the application. Setting a timer acts as a minimum delay rather than a strict guarantee, meaning scheduled tasks must wait in line if the main thread is busy with other work.
+JavaScript timers like `setTimeout` and `setInterval` do **not** run their callback code in the background or on a separate thread; instead, they rely on the browser's Web API's (or Node.js runtime) and the event loop to eventually execute on the single main thread. A long-running timer callback can therefore freeze the page.
 
-#### Common Timer Mistakes
+#### **<u>Common Timer Mistakes</u>**
 
-- **Calling the Function Immediately**
+- **Calling the Function Immediately**<br>
   `setTimeout(myFunction(), 1000);`
-  Remove the parentheses when passing the function:
+  
+  Remove the parentheses when passing the function:<br>
   `setTimeout(myFunction, 1000);`
-- **Forgetting the Timer Identifier**
-  Saved the returned identifier if the timer must be canceled later.
+- **Forgetting the Timer Identifier**<br>
+  Save the returned identifier(variable) so that if necessary the timer can be canceled later. *If you do not save it in a variable, the process will run independently and you will not be able to reference the timer again.*
   ```JavaScript
   const timer = setTimeout(myFunction, 1000);
   clearTimeout(timer);
   ```
-- **Starting Multiple Intervals**
+- **Starting Multiple Intervals**<br>
   Starting an interval more than once creates multiple repeating timers.
   ```JavaScript
   if (!timer) {
     timer = setInterval(myFunction, 1000);
   }
   ```
-- **Expecting Exact Timing**
+- **Strings as Timer Code**<br>
+  NOT Recommended
+  `setTimeout("myFunction()", 1000)`
+
+  Recommended<br>
+  `setTimeout(myFunction, 1000)`
+  Passing a function is safer, clearer, and easier to debug.
+- **Expecting Exact Timing**<br>
   Timer delays are not exact schedules.
   Callback run only when JavaScript is ready.
-- **Forgetting to Stop an Interval**
-  And interval continues until it is stopped or the page is closed.
+- **Forgetting to Stop an Interval**<br>
+  An interval continues until it is stopped or the page is closed therefore it is necessary to stop an interval.
   `clearInterval(timer);`
 
 
+#### Timers and Asynchronous JavaScript
 
+**JavaScript** is single-threaded, meaning it can only execute one command at a time on its main thread.
+
+**Asynchronous JavaScript** lets your program start a long-running or delayed task and continue running other code without freezing or blocking the rest of the application.
+
+**Timers** are built-in asynchronous functions that allow you to delay or repeat the execution of code.
+
+Even with a delay of `0` milliseconds, a timer callback does not execute instantly. It gets pushed to the back of the queue and must wait for all current synchronous code on the call stack to finish first.
+
+----
 
 
 ```JavaScript
     const tags = input.split(',').filter(tag => tag.trim() !== '').map(tag => tag.trim());
 ```
+- `split()`: can convert a string into an array by splitting the string  into smaller parts using a specific identifier.
+- `filter()`: creates a new array(`tags[]`) filled with elements that pass a specific test condition without changing the original array(`tag[]`).
+- `trim()`: removes whitespace from both sides of a string.
+- `map()`: transforms every item in an array(`tag[]`) and returns the transformed items in a new array(`tags[]`). *The original array stays unchanged unless your callback separately modifies it.*
+
+> Use `.map()` when you want a new array of transformed values. Use `.forEach()` when you want to do something with each item but don't need a new array.
+
 
 `tags[Math.floor(Math.random() * tags.length)];`
-
+- `Math.floor()`: rounds the value down to it's nearest integer.
+- `Math.random()`: returns a random number between 0 (inclusive), and 1(exclusive).*Arrays index start from 0 so the `lastIndex = numberOfItems - 1`, this allows the last index to be picked even if 1 is not a possible result when using `random()`*
+- `.length`: is a property that returns the number of elements, characters, or expected arguments depending on the data type you attach it to. *Because it is a property and NOT a method, you do NOT use parentheses`()` when calling it.*
 
 ----
-
-### <u>Description of how the code works:</u>
+### <u>**Description of how the code works:**</u>
 
 - Gets references to the two main elements on the page:
   - `tagContainer`: the container where the `tags` are displayed
@@ -168,8 +194,9 @@ JavaScript timers execute code asynchronously on a single main thread without pa
   - Takes the full text from the textarea as one string.
     - Splits it by commas:
       - `input.split(',')`
-    - Removes empty entries and trims whitespace around each item:
+    - Removes empty entries:
       - `.filter(tag => tag.trim() !== '')`
+    - And trims whitespace around each item:
       - `.map(tag => tag.trim())`
     - This means text like:
       - "apple, banana,   mango, , pear" <br>

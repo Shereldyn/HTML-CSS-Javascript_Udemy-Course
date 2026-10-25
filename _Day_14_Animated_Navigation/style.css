@@ -1,16 +1,123 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    background-color: #EAFBFF;
+    background-image: linear-gradient(to bottom,
+            #EAFBFF 0%,
+            #EAFBFF 50%,
+            #5290f9 50%,
+            #5290f9 100%);
+    font-family: 'Muli', sans-serif;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    overflow: hidden;
     margin: 0;
+}
+
+nav {
+    background-color: #fff;
+    padding: 20px;
+    width: 80px;
+    /**NON active state: 80 pixels, ACTIVE state: 350 pixels*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: width 0.6s linear;
+    /*smooths movement of increasing and decreasing width of the navigation bar*/
+}
+
+nav.active {
+    width: 350px;
+}
+
+nav ul {
+    display: flex;
+    /*turns list into a row instead of a column*/
+    list-style-type: none;
+    /*removes bullets*/
+    padding: 0;
+    margin: 0;
+    width: 0;
+    /**when the nav bar is NOT active the list will NOT be visible*/
+    transition: width 0.6s linear;
+    /*smooths movement of increasing and decreasing width of the list*/
+}
+
+nav.active ul {
+    width: 100%;
+}
+
+nav ul li {
+    transform: rotateY(0deg);
+    /**It places the list items back in its un-rotated, flat state along the Y-axis when the nav bar is NOT active*/
+    opacity: 0;
+    transition: transform 0.6s linear, opacity 0.6s linear;
+    /*rotation and change in opacity occur in a constant speed*/
+}
+
+nav.active ul li {
+    opacity: 1;
+    transform: rotateY(360deg);
+    /**when nav is ACTIVE the list items complete a full circle and end up looking identical to their starting (0deg) position*/
+}
+
+nav ul a {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    margin: 0 10px;
+    /*styled list links*/
+}
+
+.icons {
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    /*styled button*/
+}
+
+icons:focus {
+    outline: 0;
+}
+
+.icons .line {
+    background-color: #5290f9;
+    height: 2px;
+    width: 20px;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    transition: transform 0.6s linear;
+    /*
+    styles the 2 lines within the button
+    the 2 divs within the button becomes the lines
+    *initially the lines have the same position but one of the lines will be separately position away from original position
+    */
+}
+
+.icons .line2 {
+    top: auto;
+    bottom: 10px;
+    /*moves 2nd line slightly downwards so that both lines are parallel*/
+}
+
+nav.active .icons .line1 {
+    transform: rotate(-765deg) translateY(5.5px);
+    /**rotates anti-clockwise and moves vertically downwards, resulting in forming an x with the 2nd line*/
+}
+
+nav.active .icons .line2 {
+    transform: rotate(765deg) translateY(-5.5px);
+    /*rotates clockwise and moves vertically upwards*/
 }

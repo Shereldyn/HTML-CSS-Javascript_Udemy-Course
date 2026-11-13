@@ -22,11 +22,12 @@
 >
 >We can use Javascript to access the DOM to identify and interact with different elements on the page.
 >
->To add an item to the DOM, we give it a unique ID. input type="text" id="first-name".
+>To add an item to the DOM, we give it a unique ID:<br> 
+>**`input type="text" id="first-name"`**
 >
 >*Note that page items can have the same name, but must have different id's. For example* <br>
->`input type="radio" name="gender" id="male" value="male"` <br>
->`input type="radio" name="gender" id="female" value="female"`
+>`input type="radio" name="gender" `**`id="male"`**` value="male"` <br>
+>`input type="radio" name="gender" `**`id="female"`**` value="female"`
 >
 >Notice that these two radio buttons have the same name, but different id's. When the form is submitted - we can get gender="female" but on the page, if we need to work with one or the other, we can specify the exact id.
 >

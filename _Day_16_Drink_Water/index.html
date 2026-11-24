@@ -17,24 +17,27 @@
 
     <div class="cup"><!--*big jar-->
         <div class="remained" id="remainedID"><!--amount of the jar that is empty-->
-            <span id="litres">1.5L</span>
+            <span id="litres"></span><!--the amount that is empty will come from the JavaScript-->
             <small>Remained</small>
         </div>
 
-        <div class="percentage" id="percentageID"><!--percentage of the jar that is filled-->
-            20%
-        </div>
+        <div class="percentage" id="percentageID"></div><!--percentage of the jar that is filled, this amount will come from the JavaScript-->
     </div>
 
     <p class="text">Select how many glasses of water that you have drank</p>
 
-    <div class="cups"><!--*smaller cups-->
-        <div class="cup cup-small full">250 ml</div>
+    <div class="cups"><!--*container with the smaller cups inside-->
         <!--
-        #Cups that have the additional class `full` will be filled with the color blue
-        #While the cups WITHOUT the `full` class will be filled with the same color as the background
+        #The full class will be toggled on and off the `cup cup-small` classes
+        #The cups that have the additional class `full` will be filled with the color blue(that is slightly lighter than the background)
+        #While the cups WITHOUT the `full` class will be full of the color white
+        
+        //<div class="cup cup-small full">250 ml</div>
+        //<div class="cup cup-small full">250 ml</div>
+        was used as reference for styling for when the cups have the additional `full` class
         -->
-        <div class="cup cup-small full">250 ml</div>
+        <div class="cup cup-small">250 ml</div><!--*individual cups-->
+        <div class="cup cup-small">250 ml</div>
         <div class="cup cup-small">250 ml</div>
         <div class="cup cup-small">250 ml</div>
         <div class="cup cup-small">250 ml</div>

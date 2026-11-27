@@ -28,6 +28,11 @@
 >  console.log("Running later!");
 >}, 1000); // Used directly without any function name
 >```
+>>- **The parentheses `()`:** holds the inputs(`parameters`) passed into the `function`. If you only need one item you can omit the parentheses, like `fruit =>...`. <br>
+>>*However when you have `object literals` you need to use curly braces within parentheses, for example: `({id: x.id}) => x`.*
+>>- **The arrow `=>`:** replaces the traditional `function` keyword, and gives you a shorter and cleaner way to write the callback.
+>>- **The Curly Braces `{}`:** contains the code that executes. If the code is a single line the curly braces can be omitted completely.
+>
 >*An anonymous function can also be written as `function() {}`.*
 
 
